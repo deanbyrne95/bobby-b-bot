@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const config = require("./config.json");
 const quotes = require("./quotes.json");
 
 const client = new Discord.Client();
@@ -32,4 +31,5 @@ function get_random_quote() {
      return random;
 }
 
-client.login(config.BOT_TOKEN);
+// THIS  MUST  BE  THIS  WAY
+client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
