@@ -32,6 +32,5 @@ function getRandomArrayItem(array) {
 }
 
 
-client.login("Nzk3NTQ4NjQ1OTgwNzAwNjgy.X_oFDg.v-2B2heZzLWzIDqeFqgCoRxrTOQ");
 // THIS  MUST  BE  THIS  WAY
-// client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
+client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
