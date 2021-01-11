@@ -1,35 +1,37 @@
 const Discord = require("discord.js");
 const quotes = require("./quotes.json");
+const keywords = require("./keywords.json");
+const activities = require("./activities.json");
 
 const client = new Discord.Client();
-const keywords = ["Robert", "Bobby"];
-const activities_list = ["with Bessies Tits", "King of the Seven Kingdoms"];
 
 client.on("ready", () => {
-    setInterval(() => {
-        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
-        client.user.setActivity(activities_list[index]);
-    }, 10000);
+    const activity = JSON.parse(getRandomArrayItem(activities.activity));
+    client.user.setActivity(activity.name, { type: activity.type });
 })
 
-client.on("message", function(message) { 
+client.on("message", function (message) {
     if (message.author.bot) return;
     const fixedMessage = message.content.toLowerCase();
     const triggered = keywords.some(word => fixedMessage.includes(word.toLowerCase()));
     if (!triggered) {
-        console.log("NOT TRIGGERED!");
         return;
     }
-    
-    message.channel.send(get_random_quote());
+    message.react("👑");
+    message.channel.send(getRandomQuote());
 });
 
-function get_random_quote() {
-     // Returns random quote from quotes file
-     var random = quotes.quote[Math.floor(Math.random() * quotes.quote.length)];
-     console.log(random);
-     return random;
+
+function getRandomQuote() {
+    return getRandomArrayItem(quotes);
 }
 
+function getRandomArrayItem(array) {
+    const rand = JSON.stringify(array[Math.floor(Math.random() * array.length)]);
+    return rand;
+}
+
+
+client.login("Nzk3NTQ4NjQ1OTgwNzAwNjgy.X_oFDg.v-2B2heZzLWzIDqeFqgCoRxrTOQ");
 // THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
+// client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret

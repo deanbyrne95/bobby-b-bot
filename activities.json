@@ -1,0 +1,40 @@
+{
+    "activity": [
+        {
+            "name": "Game of Thrones Season 8",
+            "type": "WATCHING"
+        },
+        {
+            "name": "Lord of the Rings Trilogy 4K Extended Edition",
+            "type": "WATCHING"
+        },
+        {
+            "name": "The Tourney",
+            "type": "WATCHING"
+        },
+        {
+            "name": "Cersei Lannister's bitching",
+            "type": "LISTENING"
+        },
+        {
+            "name": "Ned Stark's whining",
+            "type": "LISTENING"
+        },
+        {
+            "name": "Bran the Broken's story",
+            "type": "LISTENING"
+        },
+        {
+            "name": "Bessie's Tits",
+            "type": "PLAYING"
+        },
+        {
+            "name": "King of the Seven Kingdoms",
+            "type": "PLAYING"
+        },
+        {
+            "name": "A Game of Thrones: The Board Game",
+            "type": "PLAYING"
+        }
+    ]
+}
